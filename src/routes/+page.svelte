@@ -1,12 +1,11 @@
 <script lang="ts">
-	import { getLikes, likePost } from '$lib/like';
+	import { incrementCounter, getCount } from '$lib/like';
 	import Card from '@components/card.svelte';
 
-	
-	$: runLikes = getLikes();
+	$: runLikes = getCount();
 
 	const like = async () => {
-		runLikes = await likePost();
+		runLikes = incrementCounter();
 	};
 </script>
 
