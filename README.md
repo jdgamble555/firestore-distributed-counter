@@ -15,11 +15,6 @@ npm i -g firebase-tools
 
 4. Run firebase emulators:
 ```
-npm run emulators
-```
-___
-**Note:** This package will automatically compile Firebase Functions Typescript under the hood:
-```
 firebase emulators:start
 ```
 ___
