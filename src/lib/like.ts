@@ -22,7 +22,7 @@ async function createCounter() {
     // Initialize the counter document
     batch.set(ref, { num_shards: NUM_SHARDS });
 
-    // Initialize each shard with count=0
+    // Initialize each shard with count = 0
     for (let i = 0; i < NUM_SHARDS; i++) {
         const shardRef = doc(db, `${ref.path}/shards/${i.toString()}`);
         batch.set(shardRef, { count: 0 });
