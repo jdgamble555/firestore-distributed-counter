@@ -1,2 +1,32 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import { getLikes, likePost } from '$lib/like';
+	import Card from '@components/card.svelte';
+
+	
+	$: runLikes = getLikes();
+
+	const like = async () => {
+		runLikes = await likePost();
+	};
+</script>
+
+<div class="flex flex-col items-center justify-center w-full">
+	<Card>
+		<h1 class="text-3xl font-bold">Awesome Post!</h1>
+		<p class="py-5">You really like this so you should heart it!</p>
+		<hr />
+		<div class="mt-3 flex items-center gap-3">
+			<button type="button" on:click={like}>
+				<div class="group hover:cursor-pointer">
+					<div class="hidden group-hover:block">🤍</div>
+					<div class="block group-hover:hidden">❤️</div>
+				</div>
+			</button>
+			{#await runLikes}
+				<span>Loading...</span>
+			{:then likes}
+				<div>{likes} Likes</div>
+			{/await}
+		</div>
+	</Card>
+</div>
