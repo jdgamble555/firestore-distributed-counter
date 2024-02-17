@@ -12,7 +12,7 @@ import {
 import { db } from "./firebase";
 
 const NUM_SHARDS = 10;
-const ref = doc(db, 'counters/test');
+const ref = doc(db, '_counters/test');
 
 
 async function createCounter() {
@@ -46,7 +46,7 @@ export async function incrementCounter() {
 
 export async function getCount() {
 
-    const ref = doc(db, 'counters/test');
+    const ref = doc(db, '_counters/test');
 
     // create couter if doesn't exist
     const docRef = await getDoc(ref);
