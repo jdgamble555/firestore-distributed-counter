@@ -46,8 +46,6 @@ export async function incrementCounter() {
 
 export async function getCount() {
 
-    const ref = doc(db, '_counters/test');
-
     // create couter if doesn't exist
     const docRef = await getDoc(ref);
 
