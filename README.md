@@ -29,7 +29,7 @@ npm run dev
 ___
 
 Read more at Code.Build:  
-- [Firestore Cloud Functions Counter](https://code.build/p/firestore-cloud-functions-counter-JuC0Pw)
+- [Firestore Distributed Counter](https://code.build/p/firestore-distributed-counters-and-sharding-MSJTpU)
 
 
 
